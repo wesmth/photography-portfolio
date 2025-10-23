@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weslen | Portfólio Criativo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased">
+
+    <div id="preloader">
+        <span class="preloader-text">WESLEN.ARTE</span>
+    </div>
+
+    <div id="main-content">
+        <div id="lightbox">
+            <div id="lightbox-content">
+                
+                <div id="lightbox-media-wrapper">
+                    <button id="lightbox-prev" class="lightbox-nav"><i data-lucide="arrow-left" class="w-6 h-6"></i></button>
+                    
+                    <img id="lightbox-img" src="" alt="Imagem ampliada" class="hidden">
+                    <iframe id="lightbox-video" src="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen class="hidden"></iframe>
+
+                    <button id="lightbox-next" class="lightbox-nav"><i data-lucide="arrow-right" class="w-6 h-6"></i></button>
+                </div>
+                <div id="lightbox-details">
+                    <button id="lightbox-close"><i data-lucide="x" class="w-8 h-8"></i></button>
+                    <h3 id="lightbox-details-title"></h3>
+                    <div id="lightbox-actions">
+                        <button id="like-button" class="lightbox-action" title="Gostar"><i data-lucide="heart" class="w-6 h-6"></i> <span id="like-count">0</span></button>
+                        <button id="lightbox-share" class="lightbox-action" title="Compartilhar"><i data-lucide="share-2" class="w-6 h-6"></i></button>
+                        <button id="lightbox-download" class="lightbox-action" title="Baixar"><i data-lucide="download" class="w-6 h-6"></i></button>
+                        <button id="lightbox-donate" class="lightbox-action" title="Apoiar com um donativo"><i data-lucide="hand-heart" class="w-6 h-6"></i></button>
+                    </div>
+                    <p id="lightbox-details-description"></p>
+                </div>
+            </div>
+        </div>
+
+        <header id="header" class="fixed top-0 left-0 right-0 z-50">
+            <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+                <a href="#home" class="text-2xl font-bold text-white tracking-widest page-link">WESLEN.ARTE</a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link page-link active" data-translate-key="home">Início</a>
+                    <a href="#photography" class="nav-link page-link" data-translate-key="photography">Fotografia</a>
+                    <a href="#ai-art" class="nav-link page-link" data-translate-key="ai_art">Arte com IA</a>
+                    <a href="#videos" class="nav-link page-link" data-translate-key="videos">Vídeos</a>
+                    <a href="#donate" class="nav-link page-link" data-translate-key="donate">Doar</a>
+                </div>
+                 <div class="hidden md:flex items-center space-x-6">
+                    <a href="https://instagram.com/your-username" target="_blank" class="text-gray-400 hover:text-orange-500 transition-colors"><i data-lucide="instagram"></i></a>
+                    </div>
+                 <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-white"><i data-lucide="menu"></i></button>
+                </div>
+            </nav>
+        </header>
+
+        <div id="mobile-menu">
+            <button id="mobile-menu-close" class="text-white"><i data-lucide="x" class="w-8 h-8"></i></button>
+            <a href="#home" class="nav-link page-link" data-translate-key="home">Início</a>
+            <a href="#photography" class="nav-link page-link" data-translate-key="photography">Fotografia</a>
+            <a href="#ai-art" class="nav-link page-link" data-translate-key="ai_art">Arte com IA</a>
+            <a href="#videos" class="nav-link page-link" data-translate-key="videos">Vídeos</a>
+            <a href="#donate" class="nav-link page-link" data-translate-key="donate">Doar</a>
+        </div>
+
+        <main>
+            <section id="home">
+                <div id="puzzle-grid-1" class="puzzle-grid"></div>
+                <div class="container mx-auto px-6 py-24 my-16 text-center">
+                     <div class="grid md:grid-cols-2 gap-16 items-center text-left">
+                        <div class="rounded-lg h-[600px] relative">
+                             <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800" alt="Foto de Weslen" class="w-full h-full object-cover rounded-lg">
+                        </div>
+                        <div>
+                            <h2 class="text-4xl font-bold mb-6 text-orange-500" data-translate-key="about_me"></h2>
+                            <p class="text-gray-400 mb-4" data-translate-key="about_text_1"></p>
+                            <p class="text-gray-400" data-translate-key="about_text_2"></p>
+                        </div>
+                    </div>
+                </div>
+                <div id="puzzle-grid-2" class="puzzle-grid"></div>
+            </section>
+
+            <section id="photography" class="container mx-auto px-6 py-32">
+                 <div class="text-center mb-16">
+                    <h2 class="text-5xl font-black uppercase" data-translate-key="photography_title"></h2>
+                    <p class="text-lg text-gray-400 mt-2" data-translate-key="photography_subtitle"></p>
+                </div>
+                <div id="photography-filters" class="flex justify-center flex-wrap gap-3 mb-12"></div>
+                <div id="photography-gallery" class="gallery-grid"></div>
+            </section>
+
+            <section id="ai-art" class="container mx-auto px-6 py-32">
+                <div class="text-center mb-16">
+                    <h2 class="text-5xl font-black uppercase" data-translate-key="ai_art_title"></h2>
+                    <p class="text-lg text-gray-400 mt-2" data-translate-key="ai_art_subtitle"></p>
+                </div>
+                <div id="ai-art-filters" class="flex justify-center flex-wrap gap-3 mb-12"></div>
+                <div id="ai-art-gallery" class="gallery-grid"></div>
+            </section>
+            
+            <section id="videos" class="container mx-auto px-6 py-32">
+                <div class="text-center mb-16">
+                    <h2 class="text-5xl font-black uppercase" data-translate-key="videos_title"></h2>
+                    <p class="text-lg text-gray-400 mt-2" data-translate-key="videos_subtitle"></p>
+                </div>
+                <div id="videos-filters" class="flex justify-center flex-wrap gap-3 mb-12"></div>
+                <div id="videos-gallery" class="gallery-grid"></div>
+            </section>
+
+            <section id="donate" class="container mx-auto px-6 py-32 max-w-4xl">
+                 <div class="text-center mb-16">
+                    <h2 class="text-5xl font-black uppercase" data-translate-key="donate_title"></h2>
+                    <p class="text-lg text-gray-400 mt-2" data-translate-key="donate_subtitle"></p>
+                </div>
+                 <div class="bg-dark-surface border border-gray-800 rounded-lg p-8 mb-16 flex items-start space-x-6">
+                    <i data-lucide="gem" class="w-12 h-12 text-orange-500 flex-shrink-0 mt-1"></i>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-2" data-translate-key="why_donate_title"></h3>
+                        <p class="text-gray-400" data-translate-key="why_donate_text"></p>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8 text-center">
+                    <div class="bg-dark-surface p-8 rounded-lg border border-gray-800">
+                        <h3 class="text-2xl font-bold mb-4 text-orange-500">PIX</h3>
+                        <img src="static/pixqr.png" alt="QR Code PIX" class="mx-auto bg-white p-2 rounded-md">
+                        <p class="mt-4 text-gray-300" data-translate-key="pix_key"></p>
+                    </div>
+                     <div class="bg-dark-surface p-8 rounded-lg border border-gray-800 flex flex-col justify-center">
+                        <h3 class="text-2xl font-bold mb-4 text-orange-500">PayPal</h3>
+                         <p class="text-gray-300 mb-6" data-translate-key="paypal_desc"></p>
+                        <a href="#" class="bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
+                            <span data-translate-key="paypal_button"></span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer id="footer" class="py-8 px-6 mt-32">
+            <div class="container mx-auto flex flex-col items-center gap-6 text-center">
+                 <div class="flex justify-center space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-orange-500 transition-colors cursor-pointer"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-orange-500 transition-colors cursor-pointer"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-orange-500 transition-colors cursor-pointer"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                </div>
+                <p class="text-gray-500" data-translate-key="created_by"></p>
+                <p class="text-gray-500">&copy; <span id="current-year"></span> WESLEN.ARTE. <span data-translate-key="rights_reserved"></span></p>
+            </div>
+        </footer>
+
+        <button id="scroll-to-top"><i data-lucide="arrow-up"></i></button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
