@@ -168,7 +168,7 @@ function initSite() {
 }
 
 function initPuzzles() {
-    initPuzzle('puzzle-grid-1', galleryItems.filter(item => item.homepagePosition === 1));
+    // Apenas a inicialização do puzzle-grid-2 é mantida
     initPuzzle('puzzle-grid-2', galleryItems.filter(item => item.homepagePosition === 2));
 }
 
