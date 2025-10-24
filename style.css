@@ -13,6 +13,7 @@
 html { scroll-behavior: smooth; }
 
 body {
+    /* Fonte 'Inter' como padrão para textos corridos */
     font-family: 'Inter', sans-serif;
     background-color: var(--light-bg); /* Fundo claro */
     /* Remove a grade sutil no tema claro ou ajusta a cor */
@@ -23,6 +24,14 @@ body {
     overflow-x: hidden;
     /* Animação de fundo pode ser removida ou ajustada */
     /* animation: animated-bg 4s linear infinite; */
+}
+
+/* Aplicando a fonte 'Playfair Display' nos títulos principais */
+h2, 
+h3,
+.preloader-text,
+#lightbox-details-title {
+    font-family: 'Playfair Display', serif;
 }
 
 /* @keyframes animated-bg {
@@ -51,15 +60,24 @@ main { padding-top: 80px; }
     -webkit-backdrop-filter: blur(12px); 
     border-bottom: 1px solid var(--border-color-light); 
 }
-.nav-link { color: var(--text-muted-dark); transition: color 0.3s; } /* Texto do menu */
+.nav-link { 
+    color: var(--text-muted-dark); 
+    transition: color 0.3s; 
+    font-family: 'Inter', sans-serif; /* Garantindo que o menu (sem ser o logo) use Inter */
+} 
 
-/* 🚀 CORREÇÃO AQUI: Aumentando a especificidade para garantir a cor laranja */
+/* CORREÇÃO AQUI: Aumentando a especificidade para garantir a cor laranja */
 #header .nav-link:hover, 
 #header .nav-link.active { 
     color: var(--brand-orange) !important; 
 }
 
-#header a.page-link { color: var(--text-dark); } /* Cor do título WESLEN.ARTE */
+/* Aplicando a fonte 'Playfair Display' no logo */
+#header a.page-link { 
+    color: var(--text-dark); 
+    font-family: 'Playfair Display', serif; /* Aplicando a fonte de título no logo */
+} 
+
 #header .lang-switcher { color: var(--text-muted-dark); }
 #header .lang-switcher.text-orange-500 { color: var(--brand-orange); } /* Cor do idioma ativo */
 #header span.text-gray-600 { color: var(--text-muted-dark);}
@@ -68,7 +86,15 @@ main { padding-top: 80px; }
 #header a[target="_blank"]:hover { color: var(--brand-orange); }
 
 /* --- Homepage Puzzle Grid --- */
-.puzzle-grid { display: grid; grid-template-columns: repeat(6, 1fr); grid-template-rows: repeat(4, 20vh); gap: var(--gap); padding: 1rem; min-height: 100vh; }
+.puzzle-grid { 
+    display: grid; 
+    grid-template-columns: repeat(6, 1fr); 
+    /* 🚀 CORREÇÃO: Trocado 'grid-template-rows' por 'grid-auto-rows' */
+    grid-auto-rows: 20vh; /* Define a altura da fileira SÓ SE ELA EXISTIR */
+    gap: var(--gap); 
+    padding: 1rem; 
+    /* min-height: 100vh; (Removido na última etapa, mantém removido) */
+}
 .puzzle-item { 
     overflow: hidden; 
     border-radius: 8px; 
@@ -89,7 +115,13 @@ main { padding-top: 80px; }
 
 @media (max-width: 768px) {
     main { padding-top: 70px; }
-    .puzzle-grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(auto-fill, 30vh); gap: 0.5rem; padding: 0.5rem; }
+    .puzzle-grid { 
+        grid-template-columns: repeat(2, 1fr); 
+        /* 🚀 CORREÇÃO: Trocado 'grid-template-rows' por 'grid-auto-rows' aqui também */
+        grid-auto-rows: 30vh; 
+        gap: 0.5rem; 
+        padding: 0.5rem; 
+    }
     .puzzle-item:nth-child(n) { grid-column: span 1; grid-row: span 1; }
     .puzzle-item:nth-child(3), .puzzle-item:nth-child(5) { grid-row: span 2; }
 }
